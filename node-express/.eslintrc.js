@@ -3,4 +3,7 @@ module.exports = {
     "rules": {
         "semi": "off",
     },
+    "env": {
+        "mocha": true,
+    },
 }
