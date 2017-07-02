@@ -1,0 +1,9 @@
+version: '3.3'
+
+services:
+  nginx-reverse-proxy:
+    build: nginx
+    image: restful-nginx:latest
+    ports:
+      - 80:80
+    restart: always
