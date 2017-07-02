@@ -5,4 +5,5 @@ module.exports = {
     items = ['Init item']
   },
   getAllItems: () => items,
+  getItem: index => items[index],
 }
