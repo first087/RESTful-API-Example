@@ -7,4 +7,9 @@ module.exports = {
   getAllItems: () => items,
   getItem: index => items[index],
   addItem: newItem => items.push(newItem),
+  updateItem: (index, updateItem) => {
+    const oldItem = items[index]
+    items[index] = updateItem
+    return oldItem
+  },
 }
