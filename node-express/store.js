@@ -12,4 +12,5 @@ module.exports = {
     items[index] = updateItem
     return oldItem
   },
+  removeItem: index => items.splice(index, 1)[0],
 }

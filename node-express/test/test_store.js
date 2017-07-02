@@ -45,4 +45,21 @@ describe('Test item store', () => {
     assert.strictEqual(items[1], updateItem)
     assert.strictEqual(oldItem, newItem)
   })
+
+  it('Remove item', () => {
+    const newItem1 = 'New item 1'
+    const newItem2 = 'New item 2'
+
+    store.addItem(newItem1)
+    store.addItem(newItem2)
+
+    const removedItem1 = store.removeItem(1)
+    const removedItem2 = store.removeItem(1)
+
+    const items = store.getAllItems()
+
+    assert.lengthOf(items, 1)
+    assert.strictEqual(removedItem1, newItem1)
+    assert.strictEqual(removedItem2, newItem2)
+  })
 })
