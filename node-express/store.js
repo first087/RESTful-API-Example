@@ -6,4 +6,5 @@ module.exports = {
   },
   getAllItems: () => items,
   getItem: index => items[index],
+  addItem: newItem => items.push(newItem),
 }
