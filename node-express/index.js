@@ -34,6 +34,12 @@ app.post('/item/', (req, res) => {
   res.status(201).end()
 })
 
+app.put('/item/:index', (req, res) => {
+  const oldItem = store.updateItem(req.params.index, req.body.item)
+
+  res.send({ oldItem })
+})
+
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!')
 })
