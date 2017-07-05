@@ -13,6 +13,11 @@ app.get('/item/', (req, res) => {
 })
 
 app.get('/item/:index', (req, res) => {
+  if (typeof req.params.index !== 'number') {
+    res.status(400).end()
+    return
+  }
+
   const item = store.getItem(req.params.index)
 
   if (item === undefined) {
@@ -35,6 +40,11 @@ app.post('/item/', (req, res) => {
 })
 
 app.put('/item/:index', (req, res) => {
+  if (typeof req.params.index !== 'number') {
+    res.status(400).end()
+    return
+  }
+
   if (store.getItem(req.params.index) === undefined) {
     res.status(404).end()
     return
@@ -51,6 +61,11 @@ app.put('/item/:index', (req, res) => {
 })
 
 app.delete('/item/:index', (req, res) => {
+  if (typeof req.params.index !== 'number') {
+    res.status(400).end()
+    return
+  }
+
   if (store.getItem(req.params.index) === undefined) {
     res.status(404).end()
     return
