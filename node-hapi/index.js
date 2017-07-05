@@ -3,15 +3,15 @@ const Hapi = require('hapi')
 const server = new Hapi.Server()
 
 server.connection({
-  port: 3000
+  port: 3000,
 })
 
 server.route({
   method: 'GET',
-  path: '/hello',
-  handler: function (request, reply) {
+  path: '/item/',
+  handler: (request, reply) => {
     return reply('hello world')
-  }
+  },
 })
 
 server.start((err) => {
