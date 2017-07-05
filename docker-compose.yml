@@ -6,4 +6,13 @@ services:
     image: restful-nginx:latest
     ports:
       - 80:80
+    links:
+      - node-express-api
+    depends_on:
+      - node-express-api
+    restart: always
+
+  node-express-api:
+    build: node-express
+    image: restful-node-express:latest
     restart: always
