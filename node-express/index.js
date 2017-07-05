@@ -50,6 +50,12 @@ app.put('/item/:index', (req, res) => {
   res.send({ oldItem })
 })
 
+app.delete('/item/:index', (req, res) => {
+  const removeItem = store.removeItem(req.params.index)
+
+  res.send({ removeItem })
+})
+
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!')
 })
