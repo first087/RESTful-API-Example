@@ -24,6 +24,11 @@ app.get('/item/:index', (req, res) => {
 })
 
 app.post('/item/', (req, res) => {
+  if (req.body.item === undefined) {
+    res.status(400).end()
+    return
+  }
+
   store.addItem(req.body.item)
 
   res.status(201).end()
