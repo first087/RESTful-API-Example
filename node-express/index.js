@@ -23,6 +23,12 @@ app.get('/item/:index', (req, res) => {
   res.send({ item })
 })
 
+app.post('/item/', (req, res) => {
+  store.addItem(req.body.item)
+
+  res.status(201).end()
+})
+
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!')
 })
