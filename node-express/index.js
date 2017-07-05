@@ -51,6 +51,11 @@ app.put('/item/:index', (req, res) => {
 })
 
 app.delete('/item/:index', (req, res) => {
+  if (store.getItem(req.params.index) === undefined) {
+    res.status(404).end()
+    return
+  }
+
   const removeItem = store.removeItem(req.params.index)
 
   res.send({ removeItem })
