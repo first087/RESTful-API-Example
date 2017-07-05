@@ -35,6 +35,16 @@ app.post('/item/', (req, res) => {
 })
 
 app.put('/item/:index', (req, res) => {
+  if (store.getItem(req.params.index) === undefined) {
+    res.status(404).end()
+    return
+  }
+
+  if (req.body.item === undefined) {
+    res.status(400).end()
+    return
+  }
+
   const oldItem = store.updateItem(req.params.index, req.body.item)
 
   res.send({ oldItem })
