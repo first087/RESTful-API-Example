@@ -29,7 +29,7 @@ app.get('/item/:index', (req, res) => {
 })
 
 app.post('/item/', (req, res) => {
-  if (req.body.item === undefined) {
+  if (typeof req.body.item !== 'string') {
     res.status(400).end()
     return
   }
@@ -50,7 +50,7 @@ app.put('/item/:index', (req, res) => {
     return
   }
 
-  if (req.body.item === undefined) {
+  if (typeof req.body.item !== 'string') {
     res.status(400).end()
     return
   }
