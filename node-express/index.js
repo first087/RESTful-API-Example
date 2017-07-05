@@ -1,9 +1,13 @@
 const express = require('express')
 
+const store = require('./store')
+
 const app = express()
 
-app.get('/', (req, res) => {
-  res.send('Hello World!. Node+Express')
+store.init()
+
+app.get('/item/', (req, res) => {
+  res.send({ items: store.getAllItems() })
 })
 
 app.listen(3000, () => {
