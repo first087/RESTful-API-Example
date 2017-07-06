@@ -13,12 +13,7 @@ app.get('/item/', (req, res) => {
 })
 
 app.get('/item/:index', (req, res) => {
-  if (typeof req.params.index !== 'number') {
-    res.status(400).end()
-    return
-  }
-
-  const item = store.getItem(req.params.index)
+  const item = store.getItem(Number(req.params.index))
 
   if (item === undefined) {
     res.status(404).end()
@@ -40,12 +35,7 @@ app.post('/item/', (req, res) => {
 })
 
 app.put('/item/:index', (req, res) => {
-  if (typeof req.params.index !== 'number') {
-    res.status(400).end()
-    return
-  }
-
-  if (store.getItem(req.params.index) === undefined) {
+  if (store.getItem(Number(req.params.index)) === undefined) {
     res.status(404).end()
     return
   }
@@ -55,23 +45,18 @@ app.put('/item/:index', (req, res) => {
     return
   }
 
-  const oldItem = store.updateItem(req.params.index, req.body.item)
+  const oldItem = store.updateItem(Number(req.params.index), req.body.item)
 
   res.send({ oldItem })
 })
 
 app.delete('/item/:index', (req, res) => {
-  if (typeof req.params.index !== 'number') {
-    res.status(400).end()
-    return
-  }
-
-  if (store.getItem(req.params.index) === undefined) {
+  if (store.getItem(Number(req.params.index)) === undefined) {
     res.status(404).end()
     return
   }
 
-  const removeItem = store.removeItem(req.params.index)
+  const removeItem = store.removeItem(Number(req.params.index))
 
   res.send({ removeItem })
 })
