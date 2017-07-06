@@ -39,6 +39,26 @@ server.route({
   },
 })
 
+server.route({
+  method: 'PUT',
+  path: '/item/{index}',
+  handler: (request, reply) => {
+    if (store.getItem(Number(request.params.index)) === undefined) {
+      reply().code(404)
+      return
+    }
+
+    if (typeof request.payload.item !== 'string') {
+      reply().code(400)
+      return
+    }
+
+    const oldItem = store.updateItem(Number(request.params.index), request.payload.item)
+
+    reply({ oldItem })
+  },
+})
+
 server.start((err) => {
   if (err) {
     throw err
