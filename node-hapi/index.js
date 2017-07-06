@@ -43,19 +43,13 @@ server.route({
   method: 'PUT',
   path: '/item/{index}',
   handler: (request, reply) => {
-    if (store.getItem(Number(request.params.index)) === undefined) {
-      reply().code(404)
-      return
-    }
+    if (store.getItem(Number(request.params.index)) === undefined) return reply().code(404)
 
-    if (typeof request.payload.item !== 'string') {
-      reply().code(400)
-      return
-    }
+    if (typeof request.payload.item !== 'string') return reply().code(400)
 
     const oldItem = store.updateItem(Number(request.params.index), request.payload.item)
 
-    reply({ oldItem })
+    return reply({ oldItem })
   },
 })
 
@@ -63,14 +57,11 @@ server.route({
   method: 'DELETE',
   path: '/item/{index}',
   handler: (request, reply) => {
-    if (store.getItem(Number(request.params.index)) === undefined) {
-      reply().code(404)
-      return
-    }
+    if (store.getItem(Number(request.params.index)) === undefined) return reply().code(404)
 
     const removeItem = store.removeItem(Number(request.params.index))
 
-    reply({ removeItem })
+    return reply({ removeItem })
   },
 })
 
