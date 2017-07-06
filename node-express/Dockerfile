@@ -1,4 +1,4 @@
-FROM node:8.1.2-alpine
+FROM node:8.1.3-alpine
 MAINTAINER Artit Kiuwilai "first087@gmail.com"
 
 COPY . /usr/src/app
