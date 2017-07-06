@@ -27,6 +27,18 @@ server.route({
   },
 })
 
+server.route({
+  method: 'POST',
+  path: '/item/',
+  handler: (request, reply) => {
+    if (typeof request.payload.item !== 'string') return reply().code(400)
+
+    store.addItem(request.payload.item)
+
+    return reply().code(201)
+  },
+})
+
 server.start((err) => {
   if (err) {
     throw err
