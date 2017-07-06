@@ -8,11 +8,18 @@ services:
       - 80:80
     links:
       - node-express-api
+      - node-hapi-api
     depends_on:
       - node-express-api
+      - node-hapi-api
     restart: always
 
   node-express-api:
     build: node-express
     image: restful-node-express:latest
+    restart: always
+
+  node-hapi-api:
+    build: node-hapi
+    image: restful-node-hapi:latest
     restart: always
