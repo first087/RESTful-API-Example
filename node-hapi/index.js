@@ -59,6 +59,21 @@ server.route({
   },
 })
 
+server.route({
+  method: 'DELETE',
+  path: '/item/{index}',
+  handler: (request, reply) => {
+    if (store.getItem(Number(request.params.index)) === undefined) {
+      reply().code(404)
+      return
+    }
+
+    const removeItem = store.removeItem(Number(request.params.index))
+
+    reply({ removeItem })
+  },
+})
+
 server.start((err) => {
   if (err) {
     throw err
