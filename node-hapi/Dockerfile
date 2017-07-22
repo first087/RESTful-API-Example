@@ -1,5 +1,5 @@
-FROM node:8.1.3-alpine
-MAINTAINER Artit Kiuwilai "first087@gmail.com"
+FROM node:8.2.1-alpine
+LABEL maintainer="Artit Kiuwilai <first087@gmail.com>"
 
 COPY . /usr/src/app
 WORKDIR /usr/src/app
