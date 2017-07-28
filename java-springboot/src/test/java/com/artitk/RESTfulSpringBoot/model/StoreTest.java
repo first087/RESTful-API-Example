@@ -27,4 +27,18 @@ public class StoreTest {
 
         Assert.assertEquals(expected, actual);
     }
+
+    @Test
+    public void addItemShouldStoreItem() {
+        String newItem1 = "New item 1";
+        String newItem2 = "New item 2";
+
+        store.addItem(newItem1);
+        store.addItem(newItem2);
+
+        String[] expected = new String[] { Store.INIT_ITEM, newItem1, newItem2 };
+        String[] actual = store.getAllItems();
+
+        Assert.assertArrayEquals(expected, actual);
+    }
 }

@@ -20,4 +20,8 @@ public class Store {
     public String getItem(int index) {
         return items.get(index);
     }
+
+    public void addItem(String newItem) {
+        items.add(newItem);
+    }
 }
