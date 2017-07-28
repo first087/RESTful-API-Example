@@ -24,4 +24,8 @@ public class Store {
     public void addItem(String newItem) {
         items.add(newItem);
     }
+
+    public String updateItem(int index, String updateItem) {
+        return items.set(index, updateItem);
+    }
 }
