@@ -19,4 +19,12 @@ public class StoreTest {
 
         Assert.assertArrayEquals(expected, actual);
     }
+
+    @Test
+    public void getItem0ShouldReturnInitItem() {
+        String expected = Store.INIT_ITEM;
+        String actual = store.getItem(0);
+
+        Assert.assertEquals(expected, actual);
+    }
 }

@@ -16,4 +16,8 @@ public class Store {
     public String[] getAllItems() {
         return items.toArray(new String[0]);
     }
+
+    public String getItem(int index) {
+        return items.get(index);
+    }
 }
