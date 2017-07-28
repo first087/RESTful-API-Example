@@ -1,5 +1,19 @@
 package com.artitk.RESTfulSpringBoot.model;
 
+import java.util.ArrayList;
+
 public class Store {
-    private String[] items;
+    public static final String INIT_ITEM = "Init item";
+
+    private ArrayList<String> items;
+
+    public Store() {
+        items = new ArrayList<>();
+
+        items.add(INIT_ITEM);
+    }
+
+    public String[] getAllItems() {
+        return items.toArray(new String[0]);
+    }
 }

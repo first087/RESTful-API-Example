@@ -1,6 +1,8 @@
 package com.artitk.RESTfulSpringBoot.model;
 
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
 
 public class StoreTest {
     private Store store;
@@ -8,5 +10,13 @@ public class StoreTest {
     @Before
     public void createStore() {
         store = new Store();
+    }
+
+    @Test
+    public void getAllItemsShouldReturnStringArrayIncludeInitItem() {
+        String[] expected = new String[] { Store.INIT_ITEM };
+        String[] actual = store.getAllItems();
+
+        Assert.assertArrayEquals(expected, actual);
     }
 }
