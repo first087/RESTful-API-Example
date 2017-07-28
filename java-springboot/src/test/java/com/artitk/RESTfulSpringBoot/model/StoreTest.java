@@ -57,4 +57,23 @@ public class StoreTest {
         Assert.assertArrayEquals(expected, actual);
         Assert.assertEquals(newItem, oldItem);
     }
+
+    @Test
+    public void removeItemShouldRemovedItemAndReturnRemovedItem() {
+        String newItem1 = "New item 1";
+        String newItem2 = "New item 2";
+
+        store.addItem(newItem1);
+        store.addItem(newItem2);
+
+        String removedItem1 = store.removeItem(1);
+        String removedItem2 = store.removeItem(1);
+
+        String[] expected = new String[]{Store.INIT_ITEM};
+        String[] actual = store.getAllItems();
+
+        Assert.assertArrayEquals(expected, actual);
+        Assert.assertEquals(newItem1, removedItem1);
+        Assert.assertEquals(newItem2, removedItem2);
+    }
 }

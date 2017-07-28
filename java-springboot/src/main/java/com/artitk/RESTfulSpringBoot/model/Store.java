@@ -28,4 +28,8 @@ public class Store {
     public String updateItem(int index, String updateItem) {
         return items.set(index, updateItem);
     }
+
+    public String removeItem(int index) {
+        return items.remove(index);
+    }
 }
