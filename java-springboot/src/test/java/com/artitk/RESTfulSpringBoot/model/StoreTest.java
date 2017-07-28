@@ -14,7 +14,7 @@ public class StoreTest {
 
     @Test
     public void getAllItemsShouldReturnStringArrayIncludeInitItem() {
-        String[] expected = new String[] { Store.INIT_ITEM };
+        String[] expected = new String[]{Store.INIT_ITEM};
         String[] actual = store.getAllItems();
 
         Assert.assertArrayEquals(expected, actual);
@@ -36,7 +36,7 @@ public class StoreTest {
         store.addItem(newItem1);
         store.addItem(newItem2);
 
-        String[] expected = new String[] { Store.INIT_ITEM, newItem1, newItem2 };
+        String[] expected = new String[]{Store.INIT_ITEM, newItem1, newItem2};
         String[] actual = store.getAllItems();
 
         Assert.assertArrayEquals(expected, actual);
