@@ -1,5 +1,6 @@
 package com.artitk.RESTfulSpringBoot.controller;
 
+import com.artitk.RESTfulSpringBoot.bean.*;
 import com.artitk.RESTfulSpringBoot.model.Store;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,5 +10,10 @@ public class ItemController {
 
     public ItemController() {
         store = new Store();
+    }
+
+    @GetMapping("/item/")
+    public Items getAllItems() {
+        return new Items(store.getAllItems());
     }
 }
