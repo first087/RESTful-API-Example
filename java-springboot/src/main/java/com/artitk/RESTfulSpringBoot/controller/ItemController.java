@@ -16,4 +16,9 @@ public class ItemController {
     public Items getAllItems() {
         return new Items(store.getAllItems());
     }
+
+    @GetMapping("/item/{index}")
+    public Item getItem(@PathVariable Integer index) {
+        return new Item(store.getItem(index));
+    }
 }
