@@ -38,4 +38,14 @@ public class ItemController {
 
         return itemHashMap;
     }
+
+    @DeleteMapping("/item/{index}")
+    public HashMap<String, String> removeItem(@PathVariable Integer index) {
+        String removeItem = store.removeItem(index);
+
+        HashMap<String, String> itemHashMap = new HashMap<>();
+        itemHashMap.put("removeItem", removeItem);
+
+        return itemHashMap;
+    }
 }
