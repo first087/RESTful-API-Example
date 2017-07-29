@@ -21,4 +21,9 @@ public class ItemController {
     public Item getItem(@PathVariable Integer index) {
         return new Item(store.getItem(index));
     }
+
+    @PostMapping("/item/")
+    public void addItem(@RequestBody Item item) {
+        store.addItem(item.getItem());
+    }
 }
