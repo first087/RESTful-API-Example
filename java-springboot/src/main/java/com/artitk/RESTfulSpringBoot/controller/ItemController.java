@@ -1,7 +1,9 @@
 package com.artitk.RESTfulSpringBoot.controller;
 
 import com.artitk.RESTfulSpringBoot.bean.*;
+import com.artitk.RESTfulSpringBoot.exception.*;
 import com.artitk.RESTfulSpringBoot.model.Store;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
@@ -21,17 +23,36 @@ public class ItemController {
 
     @GetMapping("/item/{index}")
     public Item getItem(@PathVariable Integer index) {
-        return new Item(store.getItem(index));
+        String item;
+        try {
+            item = store.getItem(index);
+        } catch (IndexOutOfBoundsException e) {
+            throw new NotFoundException(e);
+        }
+
+        return new Item(item);
     }
 
     @PostMapping("/item/")
+    @ResponseStatus(HttpStatus.CREATED)
     public void addItem(@RequestBody Item item) {
-        store.addItem(item.getItem());
+        String newItem = item.getItem();
+        if (newItem == null) throw new BadRequestException();
+
+        store.addItem(newItem);
     }
 
     @PutMapping("/item/{index}")
     public HashMap<String, String> updateItem(@PathVariable Integer index, @RequestBody Item item) {
-        String oldItem = store.updateItem(index, item.getItem());
+        String newItem = item.getItem();
+        if (newItem == null) throw new BadRequestException();
+
+        String oldItem;
+        try {
+            oldItem = store.updateItem(index, newItem);
+        } catch (IndexOutOfBoundsException e) {
+            throw new NotFoundException(e);
+        }
 
         HashMap<String, String> itemHashMap = new HashMap<>();
         itemHashMap.put("oldItem", oldItem);
@@ -41,7 +62,12 @@ public class ItemController {
 
     @DeleteMapping("/item/{index}")
     public HashMap<String, String> removeItem(@PathVariable Integer index) {
-        String removeItem = store.removeItem(index);
+        String removeItem;
+        try {
+            removeItem = store.removeItem(index);
+        } catch (IndexOutOfBoundsException e) {
+            throw new NotFoundException(e);
+        }
 
         HashMap<String, String> itemHashMap = new HashMap<>();
         itemHashMap.put("removeItem", removeItem);
