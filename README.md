@@ -3,12 +3,16 @@
 This repository has many language programming with the same proposition.
 
 ## Language/Framework
-| Language / Framework | IDE | Contributor | Progress | Remark |
-| --- | --- | :---: |  :---: | --- |
-| Node.js / Express | Visual Studio Code | [first087](https://github.com/first087) | Done | |
-| Node.js / Hapi | Visual Studio Code | [first087](https://github.com/first087) | Done | |
-| Java / Spring Boot | IntelliJ IDEA | [first087](https://github.com/first087) | Done | |
-| ... | ... | _You!_ | ... |
+| No. | Language / Framework | IDE | Contributor | Progress | Etc. |
+| ---: | :---: | :---: | :---: |  :---: | --- |
+| 1. | Node.js / Express | Visual Studio Code | [first087](https://github.com/first087) | Done | |
+| 2. | Node.js / Hapi | Visual Studio Code | [first087](https://github.com/first087) | Done | |
+| 3. | Java / Spring Boot | IntelliJ IDEA | [first087](https://github.com/first087) | Done | JDK or OpenJDK 8+ / Gradle 3.5.1 / Spring Boot 1.5.6.RELEASE |
+| | Go / ... | | _Need You!_ | | |
+| | Python / ... | | _Want You!_ | | |
+| | php / ... | | _Need You!_ | | |
+| | C# .NET Core / ... | | ... | | |
+| | ... | | _And You!_ | |
 
 ## Proposition
 Define `store` for save `item` type `Array of String` and initial value is `Init item`
