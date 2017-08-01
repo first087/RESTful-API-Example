@@ -5,6 +5,12 @@ COPY . /work
 
 RUN sh gradlew build
 
+### Use this command when config http proxy in gradle.properties file
+# RUN sh gradlew \
+#     -Djdk.http.auth.tunneling.disabledSchemes="" \
+#     -Djdk.http.auth.proxying.disabledSchemes="" \
+#     build
+
 FROM openjdk:8u131-jre-alpine
 LABEL maintainer="Artit Kiuwilai <first087@gmail.com>"
 
