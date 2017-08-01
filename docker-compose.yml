@@ -9,9 +9,11 @@ services:
     links:
       - node-express-api
       - node-hapi-api
+      - java-springboot-api
     depends_on:
       - node-express-api
       - node-hapi-api
+      - java-springboot-api
     restart: always
 
   node-express-api:
@@ -22,4 +24,9 @@ services:
   node-hapi-api:
     build: node-hapi
     image: restful-node-hapi:latest
+    restart: always
+
+  java-springboot-api:
+    build: java-springboot
+    image: restful-java-springboot:latest
     restart: always
