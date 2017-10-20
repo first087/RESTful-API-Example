@@ -10,13 +10,13 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.1"
+    "express": "^4.16.2"
   },
   "devDependencies": {
     "chai": "^4.1.2",
-    "eslint": "^4.8.0",
+    "eslint": "^4.9.0",
     "eslint-config-airbnb-base": "^11.3.2",
-    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-import": "^2.8.0",
     "mocha": "^3.5.3"
   }
 }
