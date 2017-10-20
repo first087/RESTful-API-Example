@@ -9,4 +9,4 @@ RUN npm install --production
 
 USER node
 
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
