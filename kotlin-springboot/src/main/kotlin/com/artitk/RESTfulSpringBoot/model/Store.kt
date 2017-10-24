@@ -16,4 +16,6 @@ class Store {
     }
 
     fun updateItem(index: Int, updateItem: String): String = items.set(index, updateItem)
+
+    fun removeItem(index: Int): String = items.removeAt(index)
 }
