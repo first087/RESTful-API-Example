@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class ResTfulSpringBootApplication
+class RESTfulSpringBootApplication
 
 fun main(args: Array<String>) {
-    SpringApplication.run(ResTfulSpringBootApplication::class.java, *args)
+    SpringApplication.run(RESTfulSpringBootApplication::class.java, *args)
 }
