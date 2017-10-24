@@ -41,4 +41,20 @@ class StoreTest {
 
         Assert.assertArrayEquals(expected, actual)
     }
+
+    @Test
+    fun updateItemShouldStoreItemAndReturnOldItem() {
+        val newItem = "New item"
+        store.addItem(newItem)
+
+        val updateItem = "Update item"
+
+        val oldItem: String = store.updateItem(1, updateItem)
+
+        val expected: Array<String> = arrayOf(Store.INIT_ITEM, updateItem)
+        val actual: Array<String> = store.getAllItems()
+
+        Assert.assertArrayEquals(expected, actual)
+        Assert.assertEquals(newItem, oldItem)
+    }
 }

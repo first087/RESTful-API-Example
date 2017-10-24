@@ -14,4 +14,6 @@ class Store {
     fun addItem(newItem: String) {
         items.add(newItem)
     }
+
+    fun updateItem(index: Int, updateItem: String): String = items.set(index, updateItem)
 }
