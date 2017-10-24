@@ -8,4 +8,6 @@ class Store {
     private val items: ArrayList<String> = arrayListOf(INIT_ITEM)
 
     fun getAllItems(): Array<String> = items.toTypedArray()
+
+    fun getItem(index: Int): String = items[index]
 }

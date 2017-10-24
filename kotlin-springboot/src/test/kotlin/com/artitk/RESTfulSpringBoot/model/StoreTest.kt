@@ -19,4 +19,12 @@ class StoreTest {
 
         Assert.assertArrayEquals(expected, actual)
     }
+
+    @Test
+    fun getItem0ShouldReturnInitItem() {
+        val expected: String = Store.INIT_ITEM
+        val actual: String = store.getItem(0)
+
+        Assert.assertEquals(expected, actual)
+    }
 }
