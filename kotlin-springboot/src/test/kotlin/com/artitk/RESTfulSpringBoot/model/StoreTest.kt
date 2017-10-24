@@ -27,4 +27,18 @@ class StoreTest {
 
         Assert.assertEquals(expected, actual)
     }
+
+    @Test
+    fun addItemShouldStoreItem() {
+        val newItem1 = "New item 1"
+        val newItem2 = "New item 2"
+
+        store.addItem(newItem1)
+        store.addItem(newItem2)
+
+        val expected: Array<String> = arrayOf(Store.INIT_ITEM, newItem1, newItem2)
+        val actual: Array<String> = store.getAllItems()
+
+        Assert.assertArrayEquals(expected, actual)
+    }
 }

@@ -10,4 +10,8 @@ class Store {
     fun getAllItems(): Array<String> = items.toTypedArray()
 
     fun getItem(index: Int): String = items[index]
+
+    fun addItem(newItem: String) {
+        items.add(newItem)
+    }
 }
