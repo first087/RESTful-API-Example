@@ -1,4 +1,4 @@
-FROM node:8.6.0-alpine
+FROM node:8.7.0-alpine
 LABEL maintainer="Artit Kiuwilai <first087@gmail.com>"
 
 COPY . /usr/src/app
@@ -9,4 +9,4 @@ RUN npm install --production
 
 USER node
 
-CMD ["node", "server.js"]
+CMD ["npm", "start"]
