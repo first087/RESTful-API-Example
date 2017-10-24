@@ -32,6 +32,9 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    jar.archiveName = 'app.jar'
+}
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
