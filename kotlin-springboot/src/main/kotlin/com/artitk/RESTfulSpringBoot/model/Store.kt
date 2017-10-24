@@ -6,4 +6,6 @@ class Store {
     }
 
     private val items: ArrayList<String> = arrayListOf(INIT_ITEM)
+
+    fun getAllItems(): Array<String> = items.toTypedArray()
 }
