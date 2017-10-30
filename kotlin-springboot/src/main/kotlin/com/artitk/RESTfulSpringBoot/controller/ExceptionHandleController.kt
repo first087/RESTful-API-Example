@@ -1,5 +1,6 @@
 package com.artitk.RESTfulSpringBoot.controller
 
+import com.artitk.RESTfulSpringBoot.exception.BadRequestException
 import com.artitk.RESTfulSpringBoot.exception.NotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ExceptionHandler
@@ -9,7 +10,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 @RestControllerAdvice
 class ExceptionHandleController {
-    @ExceptionHandler(MethodArgumentTypeMismatchException::class)
+    @ExceptionHandler(MethodArgumentTypeMismatchException::class, BadRequestException::class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     fun handleBadRequest(e: Exception) {
         e.printStackTrace()
