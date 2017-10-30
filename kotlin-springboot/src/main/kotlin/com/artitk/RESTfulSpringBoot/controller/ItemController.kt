@@ -57,4 +57,19 @@ class ItemController {
 
         return itemHashMap
     }
+
+    @DeleteMapping("/item/{index}")
+    fun removeItem(@PathVariable index: Int): HashMap<String, String> {
+        val removeItem: String
+        try {
+            removeItem = store!!.removeItem(index)
+        } catch (e: IndexOutOfBoundsException) {
+            throw NotFoundException(e)
+        }
+
+        val itemHashMap: HashMap<String, String> = HashMap()
+        itemHashMap.put("removeItem", removeItem)
+
+        return itemHashMap
+    }
 }
