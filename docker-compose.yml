@@ -10,10 +10,12 @@ services:
       - node-express-api
       - node-hapi-api
       - java-springboot-api
+      - kotlin-springboot-api
     depends_on:
       - node-express-api
       - node-hapi-api
       - java-springboot-api
+      - kotlin-springboot-api
     restart: always
 
   node-express-api:
@@ -29,4 +31,9 @@ services:
   java-springboot-api:
     build: java-springboot
     image: restful-java-springboot:latest
+    restart: always
+
+  kotlin-springboot-api:
+    build: kotlin-springboot
+    image: restful-kotlin-springboot:latest
     restart: always

@@ -1,4 +1,4 @@
-FROM node:8.7.0-alpine
+FROM node:8.8.1-alpine
 LABEL maintainer="Artit Kiuwilai <first087@gmail.com>"
 
 COPY . /usr/src/app
