@@ -2,11 +2,11 @@ package com.artitk.RESTfulSpringBoot.controller
 
 import com.artitk.RESTfulSpringBoot.bean.Item
 import com.artitk.RESTfulSpringBoot.bean.Items
+import com.artitk.RESTfulSpringBoot.exception.BadRequestException
 import com.artitk.RESTfulSpringBoot.exception.NotFoundException
 import com.artitk.RESTfulSpringBoot.model.Store
-import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.PathVariable
-import org.springframework.web.bind.annotation.RestController
+import org.springframework.http.HttpStatus
+import org.springframework.web.bind.annotation.*
 
 @RestController
 class ItemController {
@@ -31,5 +31,13 @@ class ItemController {
         }
 
         return Item(item)
+    }
+
+    @PostMapping("/item/")
+    @ResponseStatus(HttpStatus.CREATED)
+    fun addItem(@RequestBody item: Item) {
+        val newItem: String = item.item ?: throw BadRequestException()
+
+        store!!.addItem(newItem)
     }
 }
