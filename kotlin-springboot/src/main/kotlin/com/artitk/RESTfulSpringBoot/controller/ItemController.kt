@@ -40,4 +40,21 @@ class ItemController {
 
         store!!.addItem(newItem)
     }
+
+    @PutMapping("/item/{index}")
+    fun updateItem(@PathVariable index: Int, @RequestBody item: Item): HashMap<String, String> {
+        val newItem: String = item.item ?: throw BadRequestException()
+
+        val oldItem: String
+        try {
+            oldItem = store!!.updateItem(index, newItem)
+        } catch (e: IndexOutOfBoundsException) {
+            throw NotFoundException(e)
+        }
+
+        val itemHashMap: HashMap<String, String> = HashMap()
+        itemHashMap.put("oldItem", oldItem)
+
+        return itemHashMap
+    }
 }
