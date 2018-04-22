@@ -17,12 +17,14 @@ class Store():
         return items[index]
 
     @staticmethod
-    def add_item(newItem):
-        items.append(newItem)
+    def add_item(new_item):
+        items.append(new_item)
 
     @staticmethod
-    def update_item(index, updateItem):
-        pass
+    def update_item(index, update_item):
+        old_item = items[index]
+        items[index] = update_item
+        return old_item
 
     @staticmethod
     def remove_item(index):
