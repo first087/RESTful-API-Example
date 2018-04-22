@@ -1,18 +1,20 @@
-item = []
+items = []
+items = ['Init item']
 
 
 class Store():
     @staticmethod
     def init():
-        item.append('Init item')
+        items.clear()
+        items.append('Init item')
 
     @staticmethod
     def get_all_items():
-        return item
+        return items
 
     @staticmethod
     def get_item(index):
-        return item[index]
+        return items[index]
 
     @staticmethod
     def add_item(newItem):
