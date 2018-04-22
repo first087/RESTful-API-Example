@@ -41,7 +41,6 @@ class APITestCase(TestCase):
         new_items = ['Item 1 in test_add_item', 'Item 2 in test_add_item']
         Store.add_item(new_items[0])
         Store.add_item(new_items[1])
-
         # get from mock item
         items = Store.get_all_items()
         self.assertIs(len(items), 3)
@@ -56,14 +55,12 @@ class APITestCase(TestCase):
         # add 1 item
         new_item = 'New Item in case update_item'
         Store.add_item(new_item)
-
         # update item
         update_item = 'Update Item'
         old_item = Store.update_item(1, update_item)
 
         # get all item
         items = Store.get_all_items()
-
         self.assertIs(len(items), 2)
         self.assertIs(items[1], update_item)
         self.assertIs(old_item, new_item)
@@ -76,12 +73,9 @@ class APITestCase(TestCase):
         # add 1 item
         new_item = 'New Item in case remove_item'
         Store.add_item(new_item)
-
         # remove item
         remove_item = Store.remove_item(1)
-
         # get all item
         items = Store.get_all_items()
-
         self.assertIs(len(items), 1)
         self.assertIs(remove_item, new_item)
