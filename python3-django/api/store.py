@@ -28,4 +28,6 @@ class Store():
 
     @staticmethod
     def remove_item(index):
-        pass
+        remove_item = items[index]
+        del(items[index])
+        return remove_item
