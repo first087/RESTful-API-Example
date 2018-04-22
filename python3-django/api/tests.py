@@ -15,6 +15,17 @@ class APITestCase(TestCase):
         self.assertIsInstance(items, list)
         self.assertIs(len(items), 1)
 
+    def testis_have_index_item(self):
+        """
+        Store.is_have_index_item 
+        must return True when index have in items
+        and must return False when not have in items
+        """
+        is_have_index_0 = Store.is_have_index_item(0)
+        is_have_index_1 = Store.is_have_index_item(1)
+        self.assertTrue(is_have_index_0)
+        self.assertFalse(is_have_index_1)
+
     def test_get_item(self):
         """
         Store.get_item must return item with specific.
