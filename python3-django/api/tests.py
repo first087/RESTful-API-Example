@@ -56,3 +56,21 @@ class APITestCase(TestCase):
         self.assertIs(len(items), 2)
         self.assertIs(items[1], update_item)
         self.assertIs(old_item, new_item)
+
+    def test_remove_item(self):
+        """
+        Store.remove_item must remove item with
+        specific in items and return item is before remove.
+        """
+        # add 1 item
+        new_item = 'New Item in case remove_item'
+        Store.add_item(new_item)
+
+        # delete item
+        delete_item = Store.remove_item(1)
+
+        # get all item
+        items = Store.get_all_items()
+
+        self.assertIs(len(items), 1)
+        self.assertIs(delete_item, new_item)
