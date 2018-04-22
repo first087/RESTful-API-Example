@@ -1,13 +1,14 @@
 item = []
 
+
 class Store():
     @staticmethod
     def init():
-        pass
+        item.append('Init item')
 
     @staticmethod
     def get_all_items():
-        pass
+        return item
 
     @staticmethod
     def get_item(index):

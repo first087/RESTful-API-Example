@@ -12,5 +12,5 @@ class APITestCase(TestCase):
         Store.get_all_items must return all item in store
         """
         item = Store.get_all_items()
-        self.assertIs(type(item), 'list')
-        self.assertIn(len(item), 1)
+        self.assertTrue(isinstance(item, list))
+        self.assertIs(len(item), 1)
