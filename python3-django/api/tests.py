@@ -26,7 +26,6 @@ class APITestCase(TestCase):
         """
         Store.add_item must add new item in items.
         """
-
         # add 2 item
         new_item = ['Item 1', 'Item 2']
         Store.add_item(new_item[0])

@@ -18,7 +18,7 @@ class Store():
 
     @staticmethod
     def add_item(newItem):
-        pass
+        items.append(newItem)
 
     @staticmethod
     def update_item(index, updateItem):
