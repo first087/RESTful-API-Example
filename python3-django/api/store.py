@@ -1,6 +1,5 @@
 item = []
 
-
 class Store():
     @staticmethod
     def init():
