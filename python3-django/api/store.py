@@ -1,25 +1,27 @@
 item = []
 
 
-def init():
-    pass
+class Store():
+    @staticmethod
+    def init():
+        pass
 
+    @staticmethod
+    def get_all_items():
+        pass
 
-def getAllItems():
-    pass
+    @staticmethod
+    def get_item(index):
+        pass
 
+    @staticmethod
+    def add_item(newItem):
+        pass
 
-def get_item(index):
-    pass
+    @staticmethod
+    def update_item(index, updateItem):
+        pass
 
-
-def add_tem(newItem):
-    pass
-
-
-def update_item(index, updateItem):
-    pass
-
-
-def remove_item(index):
-    pass
+    @staticmethod
+    def remove_item(index):
+        pass
