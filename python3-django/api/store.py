@@ -12,7 +12,7 @@ class Store():
 
     @staticmethod
     def get_item(index):
-        pass
+        return item[index]
 
     @staticmethod
     def add_item(newItem):
