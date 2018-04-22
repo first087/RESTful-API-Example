@@ -40,6 +40,6 @@ services:
     image: restful-kotlin-springboot:latest
     restart: always
   python3-django-api:
-    build:  python3_django
+    build:  python3-django
     command: python3 manage.py runserver 0.0.0.0:8000
     restart: always
