@@ -66,11 +66,11 @@ class APITestCase(TestCase):
         new_item = 'New Item in case remove_item'
         Store.add_item(new_item)
 
-        # delete item
-        delete_item = Store.remove_item(1)
+        # remove item
+        remove_item = Store.remove_item(1)
 
         # get all item
         items = Store.get_all_items()
 
         self.assertIs(len(items), 1)
-        self.assertIs(delete_item, new_item)
+        self.assertIs(remove_item, new_item)
