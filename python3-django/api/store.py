@@ -8,10 +8,9 @@ class Store():
         items.clear()
         items.append('Init item')
 
-
     @staticmethod
     def is_have_index_item(index):
-        if index >= len(items) :
+        if index >= len(items):
             return False
         return True
 
@@ -19,7 +18,7 @@ class Store():
     def get_all_items():
         return items
 
-    @staticmethod   
+    @staticmethod
     def get_item(index):
         if not Store.is_have_index_item(index):
             return None

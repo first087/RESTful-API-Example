@@ -1,9 +1,7 @@
-from django.shortcuts import render
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from rest_framework.decorators import parser_classes
-
 from .store import Store
 
 # Create your views here.
@@ -32,14 +30,9 @@ def item_detail(request, index):
     Retrieve, update or delete a item.
     """
     # validate request
-    print(index)
-    print(index)
-    print(index)
-    print(index)
-    print(index)
     item = Store.get_item(index)
     if item == None:
-            return HttpResponse(status=404)
+        return HttpResponse(status=404)
 
     # check method
     if request.method == 'GET':
