@@ -1,4 +1,5 @@
-const assert = require('chai').assert
+const { assert } = require('chai')
+
 const store = require('../store')
 
 describe('Test item store', () => {
