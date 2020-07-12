@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.8'
 
 services:
   nginx-reverse-proxy:
@@ -6,11 +6,6 @@ services:
     image: restful-nginx:latest
     ports:
       - 80:80
-    links:
-      - node-express-api
-      - node-hapi-api
-      - java-springboot-api
-      - kotlin-springboot-api
     depends_on:
       - node-express-api
       - node-hapi-api
