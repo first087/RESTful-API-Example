@@ -1,18 +1,14 @@
 const express = require('express')
-const bodyParser = require('body-parser')
 
 const store = require('./store')
 
-const app = express()
-app.use(bodyParser.json())
-
 store.init()
 
-app.get('/item/', (req, res) => {
+const getAllItems = (req, res) => {
   res.send({ items: store.getAllItems() })
-})
+}
 
-app.get('/item/:index', (req, res) => {
+const getItem = (req, res) => {
   const item = store.getItem(Number(req.params.index))
 
   if (item === undefined) {
@@ -21,9 +17,9 @@ app.get('/item/:index', (req, res) => {
   }
 
   res.send({ item })
-})
+}
 
-app.post('/item/', (req, res) => {
+const addItem = (req, res) => {
   if (typeof req.body.item !== 'string') {
     res.status(400).end()
     return
@@ -32,9 +28,9 @@ app.post('/item/', (req, res) => {
   store.addItem(req.body.item)
 
   res.status(201).end()
-})
+}
 
-app.put('/item/:index', (req, res) => {
+const updateItem = (req, res) => {
   if (store.getItem(Number(req.params.index)) === undefined) {
     res.status(404).end()
     return
@@ -48,9 +44,9 @@ app.put('/item/:index', (req, res) => {
   const oldItem = store.updateItem(Number(req.params.index), req.body.item)
 
   res.send({ oldItem })
-})
+}
 
-app.delete('/item/:index', (req, res) => {
+const deleteItem = (req, res) => {
   if (store.getItem(Number(req.params.index)) === undefined) {
     res.status(404).end()
     return
@@ -59,8 +55,16 @@ app.delete('/item/:index', (req, res) => {
   const removeItem = store.removeItem(Number(req.params.index))
 
   res.send({ removeItem })
-})
+}
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!')
-})
+const app = express()
+
+app
+  .use(express.json())
+  .get('/item/', getAllItems)
+  .get('/item/:index', getItem)
+  .post('/item/', addItem)
+  .put('/item/:index', updateItem)
+  .delete('/item/:index', deleteItem)
+  // eslint-disable-next-line no-console
+  .listen(3000, () => console.log('Example app listening on port 3000!'))
