@@ -1,5 +1,6 @@
-const assert = require('chai').assert
-const store = require('../store')
+const { assert } = require('chai')
+
+const store = require('../src/store')
 
 describe('Test item store', () => {
   beforeEach(() => store.init())
