@@ -1,13 +1,13 @@
 package com.artitk.restful.model
 
-import org.junit.Assert
-import org.junit.Before
-import org.junit.Test
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.BeforeEach
+import org.junit.jupiter.api.Test
 
 class StoreTest {
     private lateinit var store: Store
 
-    @Before
+    @BeforeEach
     fun createStore() {
         store = Store()
     }
@@ -17,7 +17,7 @@ class StoreTest {
         val expected = arrayOf(Store.INIT_ITEM)
         val actual = store.getAllItems()
 
-        Assert.assertArrayEquals(expected, actual)
+        Assertions.assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -25,7 +25,7 @@ class StoreTest {
         val expected = Store.INIT_ITEM
         val actual = store.getItem(0)
 
-        Assert.assertEquals(expected, actual)
+        Assertions.assertEquals(expected, actual)
     }
 
     @Test
@@ -39,7 +39,7 @@ class StoreTest {
         val expected = arrayOf(Store.INIT_ITEM, newItem1, newItem2)
         val actual = store.getAllItems()
 
-        Assert.assertArrayEquals(expected, actual)
+        Assertions.assertArrayEquals(expected, actual)
     }
 
     @Test
@@ -54,8 +54,8 @@ class StoreTest {
         val expected = arrayOf(Store.INIT_ITEM, updateItem)
         val actual = store.getAllItems()
 
-        Assert.assertArrayEquals(expected, actual)
-        Assert.assertEquals(newItem, oldItem)
+        Assertions.assertArrayEquals(expected, actual)
+        Assertions.assertEquals(newItem, oldItem)
     }
 
     @Test
@@ -72,8 +72,8 @@ class StoreTest {
         val expected = arrayOf(Store.INIT_ITEM)
         val actual = store.getAllItems()
 
-        Assert.assertArrayEquals(expected, actual)
-        Assert.assertEquals(newItem1, removedItem1)
-        Assert.assertEquals(newItem2, removedItem2)
+        Assertions.assertArrayEquals(expected, actual)
+        Assertions.assertEquals(newItem1, removedItem1)
+        Assertions.assertEquals(newItem2, removedItem2)
     }
 }
