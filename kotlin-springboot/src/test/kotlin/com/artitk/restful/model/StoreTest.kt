@@ -14,16 +14,16 @@ class StoreTest {
 
     @Test
     fun getAllItemsShouldReturnStringArrayIncludeInitItem() {
-        val expected: Array<String> = arrayOf(Store.INIT_ITEM)
-        val actual: Array<String> = store.getAllItems()
+        val expected = arrayOf(Store.INIT_ITEM)
+        val actual = store.getAllItems()
 
         Assert.assertArrayEquals(expected, actual)
     }
 
     @Test
     fun getItem0ShouldReturnInitItem() {
-        val expected: String = Store.INIT_ITEM
-        val actual: String = store.getItem(0)
+        val expected = Store.INIT_ITEM
+        val actual = store.getItem(0)
 
         Assert.assertEquals(expected, actual)
     }
@@ -36,8 +36,8 @@ class StoreTest {
         store.addItem(newItem1)
         store.addItem(newItem2)
 
-        val expected: Array<String> = arrayOf(Store.INIT_ITEM, newItem1, newItem2)
-        val actual: Array<String> = store.getAllItems()
+        val expected = arrayOf(Store.INIT_ITEM, newItem1, newItem2)
+        val actual = store.getAllItems()
 
         Assert.assertArrayEquals(expected, actual)
     }
@@ -49,10 +49,10 @@ class StoreTest {
 
         val updateItem = "Update item"
 
-        val oldItem: String = store.updateItem(1, updateItem)
+        val oldItem = store.updateItem(1, updateItem)
 
-        val expected: Array<String> = arrayOf(Store.INIT_ITEM, updateItem)
-        val actual: Array<String> = store.getAllItems()
+        val expected = arrayOf(Store.INIT_ITEM, updateItem)
+        val actual = store.getAllItems()
 
         Assert.assertArrayEquals(expected, actual)
         Assert.assertEquals(newItem, oldItem)
@@ -69,8 +69,8 @@ class StoreTest {
         val removedItem1 = store.removeItem(1)
         val removedItem2 = store.removeItem(1)
 
-        val expected: Array<String> = arrayOf(Store.INIT_ITEM)
-        val actual: Array<String> = store.getAllItems()
+        val expected = arrayOf(Store.INIT_ITEM)
+        val actual = store.getAllItems()
 
         Assert.assertArrayEquals(expected, actual)
         Assert.assertEquals(newItem1, removedItem1)
