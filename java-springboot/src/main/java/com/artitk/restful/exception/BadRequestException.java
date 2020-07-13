@@ -1,4 +1,4 @@
-package com.artitk.RESTfulSpringBoot.exception;
+package com.artitk.restful.exception;
 
 public class BadRequestException extends RuntimeException {
     public BadRequestException() {

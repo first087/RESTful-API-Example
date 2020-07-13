@@ -1,4 +1,4 @@
-package com.artitk.RESTfulSpringBoot.bean;
+package com.artitk.restful.bean;
 
 public class Item {
     private String item;
