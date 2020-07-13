@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.Map;
 
 @RestController
 public class ItemController {
@@ -43,7 +44,7 @@ public class ItemController {
     }
 
     @PutMapping("/item/{index}")
-    public HashMap<String, String> updateItem(@PathVariable Integer index, @RequestBody Item item) {
+    public Map<String, String> updateItem(@PathVariable Integer index, @RequestBody Item item) {
         String newItem = item.getItem();
         if (newItem == null) throw new BadRequestException();
 
@@ -54,14 +55,14 @@ public class ItemController {
             throw new NotFoundException(e);
         }
 
-        HashMap<String, String> itemHashMap = new HashMap<>();
+        Map<String, String> itemHashMap = new HashMap<>();
         itemHashMap.put("oldItem", oldItem);
 
         return itemHashMap;
     }
 
     @DeleteMapping("/item/{index}")
-    public HashMap<String, String> removeItem(@PathVariable Integer index) {
+    public Map<String, String> removeItem(@PathVariable Integer index) {
         String removeItem;
         try {
             removeItem = store.removeItem(index);
@@ -69,7 +70,7 @@ public class ItemController {
             throw new NotFoundException(e);
         }
 
-        HashMap<String, String> itemHashMap = new HashMap<>();
+        Map<String, String> itemHashMap = new HashMap<>();
         itemHashMap.put("removeItem", removeItem);
 
         return itemHashMap;

@@ -1,13 +1,15 @@
 package com.artitk.restful;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class RESTfulSpringBootApplicationTests {
+class RESTfulSpringBootApplicationTests {
 
     @Test
-    public void contextLoads() {
+    @Disabled("API Test not requirement")
+    void contextLoads() {
     }
 
 }
