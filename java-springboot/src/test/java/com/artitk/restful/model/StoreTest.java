@@ -1,35 +1,35 @@
 package com.artitk.restful.model;
 
-import org.junit.Assert;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
-public class StoreTest {
+class StoreTest {
     private Store store;
 
-    @Before
+    @BeforeEach
     public void createStore() {
         store = new Store();
     }
 
     @Test
-    public void getAllItemsShouldReturnStringArrayIncludeInitItem() {
+    void getAllItemsShouldReturnStringArrayIncludeInitItem() {
         String[] expected = new String[]{Store.INIT_ITEM};
         String[] actual = store.getAllItems();
 
-        Assert.assertArrayEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void getItem0ShouldReturnInitItem() {
+    void getItem0ShouldReturnInitItem() {
         String expected = Store.INIT_ITEM;
         String actual = store.getItem(0);
 
-        Assert.assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void addItemShouldStoreItem() {
+    void addItemShouldStoreItem() {
         String newItem1 = "New item 1";
         String newItem2 = "New item 2";
 
@@ -39,11 +39,11 @@ public class StoreTest {
         String[] expected = new String[]{Store.INIT_ITEM, newItem1, newItem2};
         String[] actual = store.getAllItems();
 
-        Assert.assertArrayEquals(expected, actual);
+        Assertions.assertArrayEquals(expected, actual);
     }
 
     @Test
-    public void updateItemShouldStoreItemAndReturnOldItem() {
+    void updateItemShouldStoreItemAndReturnOldItem() {
         String newItem = "New item";
         store.addItem(newItem);
 
@@ -54,12 +54,12 @@ public class StoreTest {
         String[] expected = new String[]{Store.INIT_ITEM, updateItem};
         String[] actual = store.getAllItems();
 
-        Assert.assertArrayEquals(expected, actual);
-        Assert.assertEquals(newItem, oldItem);
+        Assertions.assertArrayEquals(expected, actual);
+        Assertions.assertEquals(newItem, oldItem);
     }
 
     @Test
-    public void removeItemShouldRemovedItemAndReturnRemovedItem() {
+    void removeItemShouldRemovedItemAndReturnRemovedItem() {
         String newItem1 = "New item 1";
         String newItem2 = "New item 2";
 
@@ -72,8 +72,8 @@ public class StoreTest {
         String[] expected = new String[]{Store.INIT_ITEM};
         String[] actual = store.getAllItems();
 
-        Assert.assertArrayEquals(expected, actual);
-        Assert.assertEquals(newItem1, removedItem1);
-        Assert.assertEquals(newItem2, removedItem2);
+        Assertions.assertArrayEquals(expected, actual);
+        Assertions.assertEquals(newItem1, removedItem1);
+        Assertions.assertEquals(newItem2, removedItem2);
     }
 }
