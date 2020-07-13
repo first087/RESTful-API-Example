@@ -1,4 +1,4 @@
-package com.artitk.RESTfulSpringBoot.model
+package com.artitk.restful.model
 
 import org.junit.Assert
 import org.junit.Before

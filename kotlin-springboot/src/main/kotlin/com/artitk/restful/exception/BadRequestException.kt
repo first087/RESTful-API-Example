@@ -1,4 +1,4 @@
-package com.artitk.RESTfulSpringBoot.exception
+package com.artitk.restful.exception
 
 class BadRequestException : RuntimeException {
     constructor(): super()

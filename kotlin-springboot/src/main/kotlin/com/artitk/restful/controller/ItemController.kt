@@ -1,8 +1,8 @@
-package com.artitk.RESTfulSpringBoot.controller
+package com.artitk.restful.controller
 
-import com.artitk.RESTfulSpringBoot.bean.*
-import com.artitk.RESTfulSpringBoot.exception.*
-import com.artitk.RESTfulSpringBoot.model.Store
+import com.artitk.restful.bean.*
+import com.artitk.restful.exception.*
+import com.artitk.restful.model.Store
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 

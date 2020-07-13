@@ -1,4 +1,4 @@
-package com.artitk.RESTfulSpringBoot.model
+package com.artitk.restful.model
 
 class Store {
     companion object {

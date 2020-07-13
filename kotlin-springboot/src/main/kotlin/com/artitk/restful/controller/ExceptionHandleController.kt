@@ -1,7 +1,7 @@
-package com.artitk.RESTfulSpringBoot.controller
+package com.artitk.restful.controller
 
-import com.artitk.RESTfulSpringBoot.exception.BadRequestException
-import com.artitk.RESTfulSpringBoot.exception.NotFoundException
+import com.artitk.restful.exception.BadRequestException
+import com.artitk.restful.exception.NotFoundException
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.ResponseStatus
