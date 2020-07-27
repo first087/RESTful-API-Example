@@ -21,8 +21,3 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-configurations {
-    this.archivesBaseName = 'app'
-    this.version = ''
-}
