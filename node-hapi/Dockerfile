@@ -1,4 +1,4 @@
-FROM node:14.5-alpine
+FROM node:14-alpine
 LABEL maintainer="Artit Kiuwilai <first087@gmail.com>"
 
 EXPOSE 3000
