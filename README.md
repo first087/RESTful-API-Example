@@ -6,9 +6,9 @@ This repository has many language programming with the same proposition.
 | No. | Language / Framework | IDE | Contributor | Progress | Etc. |
 | ---: | :---: | :---: | :---: |  :---: | --- |
 | 1. | [Node.js](https://nodejs.org/) / [Express](https://expressjs.com/) | [Visual Studio Code](https://code.visualstudio.com/) | [first087](https://github.com/first087) | Done | Node.js 14.x / Express 4.x |
-| 2. | [Node.js](https://nodejs.org/) / [Hapi](https://hapi.dev/) | [Visual Studio Code](https://code.visualstudio.com/) | [first087](https://github.com/first087) | Done | Node.js 14.x / Hapi 19.x |
-| 3. | [Java](https://www.java.com/) / [Spring Boot](https://spring.io/projects/spring-boot) | [IntelliJ IDEA](https://www.jetbrains.com/idea/) | [first087](https://github.com/first087) | Done | JDK or OpenJDK 8+ / Gradle 6.5.1 / Spring Boot 2.3.2.RELEASE |
-| 4. | [Kotlin](https://kotlinlang.org/) / [Spring Boot](https://spring.io/projects/spring-boot) | [IntelliJ IDEA](https://www.jetbrains.com/idea/) | [first087](https://github.com/first087) | Done | JDK or OpenJDK 8+ / Gradle 6.5.1 / Spring Boot 2.3.2.RELEASE |
+| 2. | [Node.js](https://nodejs.org/) / [Hapi](https://hapi.dev/) | [Visual Studio Code](https://code.visualstudio.com/) | [first087](https://github.com/first087) | Done | Node.js 14.x / Hapi 20.x |
+| 3. | [Java](https://www.java.com/) / [Spring Boot](https://spring.io/projects/spring-boot) | [IntelliJ IDEA](https://www.jetbrains.com/idea/) | [first087](https://github.com/first087) | Done | JDK or OpenJDK 11+ / Gradle 7.1.1 / Spring Boot 2.5.3 |
+| 4. | [Kotlin](https://kotlinlang.org/) / [Spring Boot](https://spring.io/projects/spring-boot) | [IntelliJ IDEA](https://www.jetbrains.com/idea/) | [first087](https://github.com/first087) | Done | JDK or OpenJDK 11+ / Gradle 7.1.1 / Spring Boot 2.5.3 |
 | | Go / ... | | _Need You!_ | | |
 | | Python / ... | | _Want You!_ | | |
 | | php / ... | | _Need You!_ | | |
