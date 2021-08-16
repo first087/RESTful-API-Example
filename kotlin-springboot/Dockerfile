@@ -1,4 +1,4 @@
-FROM gradle:6.5-jdk8 as builder
+FROM gradle:7.1-jdk11 as builder
 
 WORKDIR /work
 COPY . /work
@@ -11,7 +11,7 @@ RUN gradle build
 #     -Djdk.http.auth.proxying.disabledSchemes="" \
 #     build
 
-FROM openjdk:8-jre-alpine
+FROM openjdk:11.0-jre-slim
 LABEL maintainer="Artit Kiuwilai <first087@gmail.com>"
 
 EXPOSE 8080
